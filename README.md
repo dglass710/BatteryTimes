@@ -1,0 +1,2 @@
+# BatteryTimes
+This includes two Python programs used to time the charging and depleting process for any battery. They start by asking the user for the capacity of their battery and then the initial percentage. When the user is ready they can enter done followed by the final percentage. All useful information including the average current and total estimated time from 0% to 100% or 100% to 0% as well as an estimate from 0% to 70% or 70% to 0% depending on the script. 0% to x% for chargeTime.py and x% to 0% for depleteTime.py.
