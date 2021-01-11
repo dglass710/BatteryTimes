@@ -45,7 +45,7 @@ def mainH(initialPercentage, capacity, inc):
     majorityWorseCase = HumanTime.TimeAutoShort(majorityTotalTime + majorityError, 2)
     lowerCurrentEstimate = (capacity / 1000) / ((totalTime + error) / 3600)
     upperCurrentEstimate = (capacity / 1000) / ((totalTime - error) / 3600)
-    print(100 * "-" + f'\nTotal time elapsed:  {totalTimeElapsedStr}\nAt this rate, a full charge should occur in {totalTimeStr} +/- {errorStr}.\nIt should go from 0% to 70% in {majorityTimeStr} +/- {majorityErrorStr}.\nFor a full charge, it will take between {bestCase} and {worseCase}.\nFor 0% - 70% it will take between {majorityBestCase} and {majorityWorseCase}\nIt will charge at 1% every {HumanTime.TimeAutoShort(totalTime/100, 2)}.\nIt will charge at 1 mAh every {HumanTime.TimeAutoShort(totalTime/capacity, 2)}.\nBetween {lowerCurrentEstimate:.2f} and {upperCurrentEstimate:.2f} Amps were delivered to the battery.\n' + 100 * "-")
+    print(100 * "-" + f'\nTotal time elapsed:  {totalTimeElapsedStr}\nAt this rate, a full charge should occur in {totalTimeStr} +/- {errorStr}.\nFor a full charge, it will take between {bestCase} and {worseCase}.\nIt should go from 0% to 70% in {majorityTimeStr} +/- {majorityErrorStr}.\nFor 0% - 70% it will take between {majorityBestCase} and {majorityWorseCase}\nIt will charge at 1% every {HumanTime.TimeAutoShort(totalTime/100, 2)}.\nIt will charge at 1 mAh every {HumanTime.TimeAutoShort(totalTime/capacity, 2)}.\nBetween {lowerCurrentEstimate:.2f} and {upperCurrentEstimate:.2f} Amps were delivered to the battery.\n' + 100 * "-")
 def main(capacity): # capacity is in mAh and is the size of the battery
     "This function takes as a paramater the capacity of your battery in mAh"
     UI = True
