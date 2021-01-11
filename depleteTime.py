@@ -1,6 +1,6 @@
 import time, HumanTime
 
-def mainH(initialPercentage, capacity):
+def mainH(initialPercentage, capacity, inc):
     initialTime = time.time()
     UI = True
     while UI:
@@ -33,7 +33,7 @@ def mainH(initialPercentage, capacity):
     totalTime = (totalTimeElapsed)/((deltaPerc)/100)
     totalTimeElapsedStr = HumanTime.TimeAutoShort(finalTime - initialTime, 2)
     majorityTotalTime = .7*totalTime
-    error = totalTime/(initialPercentage - finalPercentage)
+    error = totalTime/(initialPercentage - finalPercentage) * inc
     majorityError = totalTime/((initialPercentage - finalPercentage)*10/7)
     totalTimeStr = HumanTime.TimeAutoShort(totalTime, 2)
     majorityTimeStr = HumanTime.TimeAutoShort(majorityTotalTime, 2)
@@ -51,11 +51,18 @@ def main(capacity): # capacity is in mAh and is the size of the battery
     UI = True
     while UI:
         try:
+            inc = eval(input('How much does your percentage incriment by?\t'))
+            UI = False
+        except:
+            pass
+    UI = True
+    while UI:
+        try:
             tmp = eval(input('What is the current percentage?\t'))
             UI = False
         except:
             pass
-    mainH(tmp, capacity)
+    mainH(tmp, capacity, inc)
 def mainHelper():
     while True:
         ui = input("How much does your battery store in mAh?\t")
